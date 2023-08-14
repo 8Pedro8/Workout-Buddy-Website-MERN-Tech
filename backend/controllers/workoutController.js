@@ -3,9 +3,12 @@ const mongoose = require('mongoose');
 
 // get all workouts
 const getWorkouts = async (req, res) => {
-    const workouts = await Workout.find().sort({createdAt: -1}) // find({ reps: 20 }) --> example of getting all with rep 20
-
-    res.status(200).json(workouts)
+    try {
+        const workouts = await Workout.find().sort({createdAt: -1});
+        res.status(200).json(workouts);
+    } catch (error) {
+        res.status(500).json({ error: "Server Error" });
+    }
 }
 
 // get a single workout
