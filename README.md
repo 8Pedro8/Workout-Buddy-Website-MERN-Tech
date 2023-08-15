@@ -2,6 +2,11 @@
 
 Workout Buddy is a simple, intuitive, and efficient application designed to help you keep track of your workouts. It allows users to add, view, and delete workouts. This project is built using the MERN stack (MongoDB, Express, React, Node.js), with Vite configuring the React frontend.
 
+## Live Demo
+
+Visit the live demo of the application at [https://workout-buddy-7wsu.onrender.com/](https://workout-buddy-7wsu.onrender.com/)
+
+
 ## Features
 
 - Add new workouts with specifications (type, load, reps)
