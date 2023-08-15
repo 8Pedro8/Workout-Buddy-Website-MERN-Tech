@@ -1,4 +1,5 @@
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext"
+import config from '../config';
 
 // date fns
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
@@ -7,7 +8,7 @@ const WorkoutDetails = ({ workout }) => {
     const { dispatch } = useWorkoutsContext()
 
     const handleClick = async () => {
-        const res = await fetch('http://localhost:4000/api/workouts/' + workout._id, {
+        const res = await fetch(config.apiUrl + workout._id, {
             method: 'DELETE'
         })
 

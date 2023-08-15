@@ -1,16 +1,21 @@
 import { useEffect } from "react"
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext"
+import config from '../config';
 
 // components
 import WorkoutDetails from "../Components/WorkoutDetails"
 import WorkoutForm from "../Components/WorkoutForm"
 
 const Home = () => {
+    //const host = 'http://localhost:4000/api/workouts'
+    //const host = `${import.meta.env.VITE_REACT_APP_API_URL}`
+    const host = config.apiUrl
+
     const {workouts, dispatch} = useWorkoutsContext()
 
     useEffect(() => {
         const fetchWorkouts = async () => {
-          const response = await fetch('http://localhost:4000/api/workouts')
+          const response = await fetch(host)
     
           if (response.ok) {
             const json = await response.json()
